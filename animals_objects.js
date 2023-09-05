@@ -42,9 +42,6 @@ function prepareObjects(jsonData) {
     const name = fullname.substring(0, firstSpace);
     const desc = fullname.substring(secondSpace + 1, lastSpace);
     const type = fullname.substring(lastSpace + 1);
-    console.log("name", name);
-    console.log("desc", desc);
-    console.log("type", type);
 
     // Indsætter property values til vores nye animal array
     animal.name = name;
