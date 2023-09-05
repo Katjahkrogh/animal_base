@@ -2,13 +2,6 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
-const Animal = {
-  name: "",
-  desc: "",
-  type: "",
-  age: 0,
-};
-
 const allAnimals = [];
 
 function start() {
@@ -28,22 +21,21 @@ function loadJSON() {
 
 function prepareObjects(jsonData) {
   jsonData.forEach((jsonObject) => {
-    // TODO: Create new object with cleaned data - and store that in the allAnimals array
-    const animal = Object.create(Animal);
+    // Laver et nyt objekt
+    const animal = {};
 
     // Vi finder index pladsen for mellemrummene, så vi kan inddele ordene i stringen
     const fullname = jsonObject.fullname;
     const firstSpace = fullname.indexOf(" ");
     const secondSpace = fullname.indexOf(" ", firstSpace + 1);
     const lastSpace = fullname.lastIndexOf(" ");
-    console.log(firstSpace);
 
-    // Vi laver de properties, som vi gerne vil have i Animal Arrayét
+    // Vi laver de properties, som vi gerne vil have i animal objektet
     const name = fullname.substring(0, firstSpace);
     const desc = fullname.substring(secondSpace + 1, lastSpace);
     const type = fullname.substring(lastSpace + 1);
 
-    // Indsætter property values til vores nye animal array
+    // Indsætter property values til vores nye animal objekt
     animal.name = name;
     animal.type = type;
     animal.desc = desc;
